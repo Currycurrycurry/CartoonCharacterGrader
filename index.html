@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cartoon Character Grader</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <main role="main" class="container">
+      <div id="loader">
+        <div class="spinner-grow" role="status" style="width: 12rem; height: 12rem;">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <p>Loading trained model...</p>
+      </div>
+      <div id="classifier">
+        <div class="heading">
+          <h1>Cartoon Character Grader</h1>
+          <p class="lead">The <i>Cartoon Character Grader</i> is a deep learning model that was built with Keras and then exported to be used in the browser by Tensorflow.js in the browser to grade the cartoon characters.</p>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+              <img id="img" src="img/1.jpg" width=375 height=375 />
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm button-row">
+              <label class="btn btn-primary" for="my-file-selector">
+                  <input id="my-file-selector" type="file" class="d-none" onchange="changeImage()" accept="image/jpeg, image/png">
+                  Upload New Picture
+              </label>
+              <label class="btn btn-primary class-b" for="predict">
+                  <input id="predict" type="button" class="d-none" >
+                  Rating
+              </label>
+              <p id="ratedNumber"> Score(10/10):</p>
+            </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
